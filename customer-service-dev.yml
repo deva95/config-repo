@@ -1,14 +1,21 @@
-global:
-  message: Welcome to Customer service Dev environment!!
-server:
-  port: 8082
-message: Hello from Dev!
 spring:
-   datasource:
-    url: jdbc:mysql://localhost:3306/cust_dev
-    username: deva
-    password: deva
+  application:
+    name: customer-service-dev
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/customer_dev
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
   jpa:
     hibernate:
-      ddl-auto: update
-    show-sql: true
+      ddl-auto: none
+    show-sql: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
