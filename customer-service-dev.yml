@@ -5,6 +5,8 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/customer_dev
     driver-class-name: com.mysql.cj.jdbc.Driver
+    username: deva
+    password: deva
 
   jpa:
     hibernate:
