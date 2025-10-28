@@ -1,13 +1,30 @@
-global:
-  message: Welcome to global Microservices Environment !!
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-service
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/deva95/config-repo  # ✅ replace with your repo URL
+          default-label: main      # or master, depending on your branch name
+          
+
 logging:
   level:
     root: INFO
+
 management:
   endpoints:
     web:
       exposure:
         include: health,info,refresh
-   endpoint:
-     health:
-       show-details: always
+  endpoint:
+    health:
+      show-details: always
+
+global:
+  message: Welcome to global Microservices Environment !!
