@@ -1,14 +1,23 @@
-global:
-  message: Welcome to order service prod environment!!
-server:
-  port: 8085
-message: Hello from order prod!!
 spring:
-   datasource:
+  application:
+    name: order-service-prod
+
+  datasource:
     url: jdbc:mysql://localhost:3306/order_prod
+    driver-class-name: com.mysql.cj.jdbc.Driver
     username: deva
     password: deva
+
   jpa:
     hibernate:
-      ddl-auto: update
-    show-sql: true
+      ddl-auto: none
+    show-sql: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
