@@ -3,7 +3,7 @@ spring:
     name: order-service-dev
 
   datasource:
-    url: jdbc:mysql://localhost:3306/order_dev
+    url: jdbc:mysql://localhost:3306/order_master
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: deva
     password: deva
